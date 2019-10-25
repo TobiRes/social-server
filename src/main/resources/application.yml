@@ -1,6 +1,6 @@
 spring:
     data:
         mongodb:
-            uri: mongodb://social:social123@ds239578.mlab.com:39578/social-db
+            uri: mongodb+srv://social2:social123@cluster0-jedd1.mongodb.net/test?retryWrites=true&w=majority
 server:
     port: 8080
