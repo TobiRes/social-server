@@ -1,0 +1,6 @@
+spring:
+    data:
+        mongodb:
+            uri: mongodb://social:social123@ds239578.mlab.com:39578/social-db
+server:
+    port: 8080
