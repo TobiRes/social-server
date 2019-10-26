@@ -13,6 +13,7 @@ public class ProjectDTOToProjectConverter {
                 .title(project.getTitle())
                 .shortDescription(project.getShortDescription())
                 .longDescription(project.getLongDescription())
+                .createdBy(project.getCreatedBy())
                 .startDate(project.getStartDate())
                 .endDate(project.getEndDate())
                 .address(project.getAddress())
