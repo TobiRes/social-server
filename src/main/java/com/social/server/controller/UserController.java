@@ -76,7 +76,7 @@ public class UserController{
             }
         }
 
-        
+        //save users into Project
         for(Project temp : projectList){
             if(temp.getTitle().equals(projectName)){
                 currentProject = temp;
@@ -88,12 +88,14 @@ public class UserController{
             }
         }
 
-        List<Project> activeProjects = new ArrayList<>(currentUser.getActiveProjects());
-        //currentUser.getActiveProjects().add(currentProject);
-        activeProjects.add(currentProject);
-        currentUser.setActiveProjects(activeProjects);
+        
+        //safe projects into user
+        //List<Project> currentActiveProjects = new ArrayList<>(currentUser.getActiveProjects());
+        currentUser.getActiveProjects().add(currentProject);
+        //activeProjects.add(currentProject);
+        //currentUser.setActiveProjects(null);
         userRepository.save(currentUser);
-
+        
 
 
         return new ResponseEntity<>(currentUser, HttpStatus.OK);
@@ -118,8 +120,5 @@ public class UserController{
 
         return new ResponseEntity<>(currentUser.getActiveProjects(), HttpStatus.OK);
     }
-
-
-
 }
 
