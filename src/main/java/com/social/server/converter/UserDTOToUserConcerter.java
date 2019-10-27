@@ -1,5 +1,6 @@
 package com.social.server.converter;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 import com.social.server.models.user.User;
@@ -16,8 +17,7 @@ public class UserDTOToUserConcerter {
         .birthday(dto.getEmail())
         .phone(dto.getPhone())
         .profilePicture(dto.getProfilePicture())
-        .pastProjects(dto.getPastProjects())
-        .activeProjects(dto.getActiveProjects())
+        .activeProjects(new ArrayList<>())
         .build();
     }
 

@@ -3,12 +3,12 @@ package com.social.server.controller;
 import com.social.server.converter.ProjectDTOToProjectConverter;
 import com.social.server.models.project.Project;
 import com.social.server.models.project.ProjectDTO;
+import com.social.server.models.user.User;
 import com.social.server.repositories.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -46,9 +46,26 @@ public class ProjectController {
             produces = { "application/json" },
             method = RequestMethod.GET)
     public ResponseEntity<List<Project>> loadModel(@PathVariable("userID") String userID) {
-        // 1. Load all project
         List<Project> projects = projectRepository.findAll();
-        // 2. Use userID to check which project can keep phone data etc.
+
         return new ResponseEntity<>(projects, HttpStatus.OK);
     }
+
+    @RequestMapping(value = "project/user/{projectname}",
+        produces = {"application/json"},
+        method = RequestMethod.GET)
+        public ResponseEntity<List<User>> returnUsers(@PathVariable("projectname") String projectTitle) {
+            
+            List<Project> projectList = projectRepository.findAll();
+            Project currentProject = null;
+
+            for(Project temp : projectList){
+                if(temp.getTitle().equals(projectTitle)){
+                    currentProject = temp;
+                }
+            }
+         return new ResponseEntity<>(currentProject.getUsers(), HttpStatus.OK);
+
+            
+        }
 }

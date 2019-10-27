@@ -3,6 +3,7 @@ package com.social.server.converter;
 import com.social.server.models.project.Project;
 import com.social.server.models.project.ProjectDTO;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 
@@ -18,6 +19,7 @@ public class ProjectDTOToProjectConverter {
                 .endDate(project.getEndDate())
                 .address(project.getAddress())
                 .stuffAndThings(project.getStuffAndThings())
+                .users(new ArrayList<>())
                 .build();
     }
 }

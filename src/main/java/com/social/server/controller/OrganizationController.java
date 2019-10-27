@@ -2,8 +2,6 @@ package com.social.server.controller;
 
 import java.util.List;
 
-import java.util.List;
-
 import com.social.server.converter.OrganizationDTOToOrganizationConverter;
 import com.social.server.converter.ProjectDTOToProjectConverter;
 import com.social.server.converter.UserDTOToUserConcerter;
@@ -14,7 +12,6 @@ import com.social.server.models.project.ProjectDTO;
 import com.social.server.models.user.User;
 import com.social.server.models.user.UserDTO;
 import com.social.server.repositories.OrganizationRepository;
-import com.social.server.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.http.HttpStatus;

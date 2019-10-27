@@ -1,5 +1,8 @@
 package com.social.server.models.user;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.social.server.models.project.Project;
 
 import lombok.Builder;
@@ -18,6 +21,6 @@ public class User {
     private String birthday;
     private String phone;
     private String profilePicture;
-    private Project[] pastProjects;
-    private Project[] activeProjects;
+    private List<Project> pastProjects;
+    private List<Project> activeProjects;
 }
